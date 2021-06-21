@@ -1,6 +1,6 @@
 ###
-- 추론시스템 작업 완료 (지오레퍼런싱 미추)
-- 환경설치 : sh ENV_install.sh
+- 추론시스템 작업 완료 (지오레퍼런싱 미추가)
+- 환경설치 : 가상환(conda, virtualenv...) sh ENV_install.sh
 - 유닛테스트 형식 <- 작업중
 
 ### 추론 prototype

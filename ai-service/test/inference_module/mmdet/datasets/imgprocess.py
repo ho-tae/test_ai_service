@@ -366,15 +366,7 @@ def server_det_bboxes(result, score_thr=0):
         y2 = bbox_int[3]
         obj_class = int(label)+1
 
-        # sandbox label## revise
-        if obj_class == 3 or obj_class == 4 or obj_class == 5:
-            obj_class -= 2
-        else:
-            continue
-        # object_coords.append(bbox_int.tolist())
         object_coords.append([x1, y1, x2, y1, x2, y2, x1, y2, obj_class])
-
-
 
     return object_coords
 
