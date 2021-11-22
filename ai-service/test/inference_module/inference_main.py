@@ -32,5 +32,5 @@ class Inference:
     def __call__(self, img):
         self.image = img
         result = inference_detector(self.model, self.image)
-        self.object_coords = server_det_bboxes(result, score_thr=0)
+        self.object_coords = server_det_bboxes(img, result, score_thr=0.3)
         return self.object_coords

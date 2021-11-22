@@ -304,7 +304,7 @@ def server_det_masks_demo(result,
     #     cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
     #                 cv2.FONT_HERSHEY_COMPLEX, font_scale, text_color)
 
-def server_det_bboxes(result, score_thr=0):
+def server_det_bboxes(img, result, score_thr=0.3):
     # bbox_color='green',
     # text_color='green',
     # thickness=1,
@@ -365,6 +365,12 @@ def server_det_bboxes(result, score_thr=0):
         x2 = bbox_int[2]
         y2 = bbox_int[3]
         obj_class = int(label)+1
+        box_width = x2 - x1
+        box_height = y2 - y1
+        box_area = box_height * box_width
+        img_area = (img.shape[0] * img.shape[1])/2
+        if box_area > img_area:
+            continue     
 
         object_coords.append([x1, y1, x2, y1, x2, y2, x1, y2, obj_class])
 
